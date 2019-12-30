@@ -1,0 +1,44 @@
+{
+	"name": "snuji",
+	"version": "0.0.0",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"author": "Brian Uosseph <brian.uosseph@gmail.com>",
+	"license": "MIT",
+	"keywords": ["middleware"],
+	"scripts": {
+		"clean-lib": "tsc -b --clean",
+		"clean-tests": "del coverage",
+		"clean": "yarn clean-lib && yarn clean-tests && del node_modules",
+		"prepare": "tsc -b",
+		"lint": "eslint --ext .ts __tests__ index.ts",
+		"test": "jest --coverage"
+	},
+	"devDependencies": {
+		"@types/jest": "^24.0",
+		"@typescript-eslint/eslint-plugin": "^2.7",
+		"@typescript-eslint/parser": "^2.7",
+		"del-cli": "^3.0",
+		"eslint": "^6.6",
+		"husky": "^3.0",
+		"jest": "^24.8",
+		"lint-staged": "^9.4",
+		"ts-jest": "^24.1",
+		"typescript": "^3.7"
+	},
+	"jest": {
+		"preset": "ts-jest",
+		"testEnvironment": "node"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.ts": [
+			"eslint --fix",
+			"git add"
+		]
+	}
+}
