@@ -1,4 +1,4 @@
-# snuji ![npm](https://img.shields.io/npm/v/snuji.svg?style=flat-square) [![Build Status](https://travis-ci.org/buosseph/snuji.svg?branch=develop)](https://travis-ci.org/buosseph/snuji)
+# snuji ![npm](https://img.shields.io/npm/v/snuji.svg?style=flat-square) [![Build Status](https://travis-ci.org/buosseph/snuji.svg?branch=master)](https://travis-ci.org/buosseph/snuji)
 
 snuji is a context-based middleware implementation.
 
@@ -32,7 +32,7 @@ const middleware: Middleware<Context>[] = [
 		ctx.value += 1;
 		await next();
 		console.debug("Middleware 2 End");
-	},
+	}
 ];
 
 // In an application create your context and run your
