@@ -6,13 +6,15 @@ snuji is a context-based middleware implementation.
 
 `yarn add snuji`
 
-or 
+or
 
 `npm install --save snuji`
 
 ## Usage
 
 ```tsx
+import compose, { Middlware, Handler } from "snuji";
+
 // Define your shared middleware context
 type Context = { value: number };
 
@@ -45,7 +47,7 @@ const middleware: Middleware<Context>[] = [
 	const stack = compose<Context>(...middleware);
 
 	// Define your handler to be sandwiched by your middleware
-	const handler = (ctx: Context) => console.log("Value: " + ctx.value);
+	const handler: Handler<Context> = ctx => console.log("Value: " + ctx.value);
 
 	// Pass your context through the middleware and handler stack.
 	await stack(ctx, handler);
