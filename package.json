@@ -1,11 +1,13 @@
 {
 	"name": "snuji",
-	"version": "0.0.0",
+	"version": "0.1.0-alpha.1",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"author": "Brian Uosseph <brian.uosseph@gmail.com>",
 	"license": "MIT",
-	"keywords": ["middleware"],
+	"keywords": [
+		"middleware"
+	],
 	"scripts": {
 		"clean-lib": "tsc -b --clean",
 		"clean-tests": "del coverage",
